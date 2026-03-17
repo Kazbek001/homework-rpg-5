@@ -25,4 +25,4 @@ public abstract class ActionDecorator implements AttackAction {
     public String getEffectSummary() {
         return wrappedAction.getEffectSummary();
     }
-}
+}   

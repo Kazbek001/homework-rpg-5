@@ -18,12 +18,16 @@ public class HeroProfile {
     }
 
     public void takeDamage(int amount) {
-        // TODO: Decide how health should be reduced and clamped.
+        // Уронды азайтамыз және HP 0-ден төмен түсіп кетпеуін қадағалаймыз.
+        // Бұл "зомби-батыр" (теріс денсаулықпен жүру) қателігінен сақтайды.
         health -= amount;
+        if (health < 0) {
+            health = 0;
+        }
     }
 
     public boolean isAlive() {
-        // TODO: Decide whether additional conditions belong here.
+        // Батырдың денсаулығы 0-ден көп болса, ол әлі шайқаса алады.
         return health > 0;
     }
 }
